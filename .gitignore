@@ -1,0 +1,17 @@
+# IDE-specific folders
+.vscode/
+
+# Compiled output
+bin/
+out/
+
+# OS-specific files
+Thumbs.db
+
+# Logs
+*.log
+
+# Java-specific
+*.class
+*.jar
+*.war
