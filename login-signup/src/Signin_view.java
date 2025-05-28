@@ -1,6 +1,4 @@
-    import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
-import javax.swing.Box;
+    import javax.swing.BorderFactory;
     import javax.swing.BoxLayout;
     import javax.swing.ImageIcon;
     import javax.swing.JButton;
@@ -9,18 +7,13 @@ import javax.swing.Box;
     import javax.swing.JPasswordField;
     import javax.swing.JTextField;
     import javax.swing.JLabel;
-    import javax.swing.WindowConstants;
-    import javax.swing.border.Border;
 
     import java.awt.BorderLayout;
     import java.awt.Color;
     import java.awt.Dimension;
     import java.awt.Font;
     import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-    import java.io.File;
-    import java.io.IOException;
+    import java.awt.Image;
 
     public class Signin_view extends JFrame {
         final private Font mainFont = new Font("Sansserif", Font.BOLD, 18);
