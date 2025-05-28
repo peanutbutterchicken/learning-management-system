@@ -1,47 +1,108 @@
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.WindowConstants;
+    import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+    import javax.swing.BoxLayout;
+    import javax.swing.ImageIcon;
+    import javax.swing.JButton;
+    import javax.swing.JFrame;
+    import javax.swing.JPanel;
+    import javax.swing.JPasswordField;
+    import javax.swing.JTextField;
+    import javax.swing.JLabel;
+    import javax.swing.WindowConstants;
+    import javax.swing.border.Border;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
+    import java.awt.BorderLayout;
+    import java.awt.Color;
+    import java.awt.Dimension;
+    import java.awt.Font;
+    import java.awt.GridLayout;
+    import java.awt.image.BufferedImage;
+    import java.io.File;
+    import java.io.IOException;
 
-public class Signin_view extends JFrame {
-    final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
-    JTextField tfFirstName, tfLastName;
+    public class Signin_view extends JFrame {
+        final private Font mainFont = new Font("Sansserif", Font.BOLD, 18);
+        final private Font titleFont = mainFont.deriveFont(42f);
 
-    public void initialize(){
+        private JTextField usernameField;
+        private JPasswordField passwordField;
 
-        // Main Panel
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(0,2));
-        mainPanel.setBackground(Color.WHITE);
+        public Signin_view(){
+            initComponents();
+        }
 
-        // First Panel
-        JPanel firstPanel = new JPanel();
-        firstPanel.setLayout(new GridLayout(0,1));
-        firstPanel.setBackground(Color.BLUE);
+        private void initComponents(){
 
-        // Second Panel
-        JPanel secondPanel = new JPanel();
-        secondPanel.setLayout(new GridLayout(0,1));
-        secondPanel.setBackground(Color.LIGHT_GRAY);
+            //image container
+            JPanel panel1 = new JPanel();
+            panel1.setBackground(Color.BLUE);
 
-        add(mainPanel);
+            //signin components
+            JLabel formTitle = new JLabel("Signin");
+            formTitle.setFont(titleFont);
+            formTitle.setPreferredSize(new Dimension(0, 150));
+            formTitle.setHorizontalAlignment(formTitle.CENTER);
+    
+            JLabel lbUsername = new JLabel(new ImageIcon("resources/icons/userIcon.png"));
+            lbUsername.setFont(mainFont.deriveFont(15f));
+            usernameField = new JTextField();
+            usernameField.setMaximumSize(new Dimension(300, 40));
+            usernameField.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY));
+            usernameField.setOpaque(false); 
 
-        mainPanel.add(firstPanel);
-        mainPanel.add(secondPanel);
+            JLabel lbPassword = new JLabel("Password: ");
+            lbPassword.setFont(mainFont.deriveFont(15f));
+            passwordField = new JPasswordField();
+            passwordField.setMaximumSize(new Dimension(300, 40));
+            passwordField.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY)); // bottom line only
+            passwordField.setOpaque(false); 
 
-        setTitle("Login");
-        setSize(800,500);
-        setMinimumSize(new Dimension(300, 300));
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
-        setLocationRelativeTo(null);
+            JPanel horizontalContainer1 = new JPanel();
+            horizontalContainer1.setLayout(new BoxLayout(horizontalContainer1, BoxLayout.X_AXIS));
+            horizontalContainer1.add(lbUsername);
+            horizontalContainer1.add(usernameField);
+
+            JPanel horizontalContainer2 = new JPanel();
+            horizontalContainer2.setLayout(new BoxLayout(horizontalContainer2, BoxLayout.X_AXIS));
+            horizontalContainer2.add(lbPassword);
+            horizontalContainer2.add(passwordField);
+
+            JButton btnSignin = new JButton("Signin");
+
+            JPanel verticalContainer = new JPanel();
+            verticalContainer.setLayout(new BoxLayout(verticalContainer, BoxLayout.Y_AXIS));
+            verticalContainer.add(horizontalContainer1);
+            verticalContainer.add(horizontalContainer2);
+            verticalContainer.add(btnSignin);
+
+            //signin components container
+            JPanel panel2 = new JPanel();
+            panel2.setLayout(new BorderLayout());
+
+            panel2.add(formTitle, BorderLayout.NORTH);
+            panel2.add(verticalContainer, BorderLayout.CENTER);
+
+            //main panel
+            JPanel mainPanel = new JPanel();
+            mainPanel.setLayout(new GridLayout(0, 2));
+            mainPanel.add(panel1); // panel1 contains image
+            mainPanel.add(panel2); // panel2 contains set of multiple panels with different layouts and contains multiple components
+
+            add(mainPanel);
+            setTitle("Login");
+            setSize(800,500);
+            setMinimumSize(new Dimension(300, 300));
+            setDefaultCloseOperation(Signin_view.EXIT_ON_CLOSE);
+            setVisible(true);
+            setLocationRelativeTo(null);
+        }
+
+        public String getUsername(){
+            return usernameField.getText();
+        }
+
+        public char[] getPassword(){
+            return passwordField.getPassword();
+        }
     }
-}
