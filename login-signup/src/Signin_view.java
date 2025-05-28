@@ -17,7 +17,8 @@ import javax.swing.Box;
     import java.awt.Dimension;
     import java.awt.Font;
     import java.awt.GridLayout;
-    import java.awt.image.BufferedImage;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
     import java.io.File;
     import java.io.IOException;
 
@@ -35,8 +36,11 @@ import javax.swing.Box;
         private void initComponents(){
 
             //image container
-            JPanel panel1 = new JPanel();
-            panel1.setBackground(Color.BLUE);
+            ImageIcon signinImageIcon = loadAndResizeIcon("/resources/images/signin-image.png", 256, 256);
+            JLabel signinImage = new JLabel(signinImageIcon);
+
+            JPanel panel1 = new JPanel(new BorderLayout());    
+            panel1.add(signinImage);
 
             //signin components
             JLabel formTitle = new JLabel("Signin");
@@ -44,15 +48,13 @@ import javax.swing.Box;
             formTitle.setPreferredSize(new Dimension(0, 150));
             formTitle.setHorizontalAlignment(formTitle.CENTER);
     
-            JLabel lbUsername = new JLabel(new ImageIcon("resources/icons/userIcon.png"));
-            lbUsername.setFont(mainFont.deriveFont(15f));
+            JLabel lbUsername = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/userIcon.png")));
             usernameField = new JTextField();
             usernameField.setMaximumSize(new Dimension(300, 40));
             usernameField.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY));
             usernameField.setOpaque(false); 
 
-            JLabel lbPassword = new JLabel("Password: ");
-            lbPassword.setFont(mainFont.deriveFont(15f));
+            JLabel lbPassword = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/pwIcon.png")));
             passwordField = new JPasswordField();
             passwordField.setMaximumSize(new Dimension(300, 40));
             passwordField.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY)); // bottom line only
@@ -86,7 +88,7 @@ import javax.swing.Box;
             //main panel
             JPanel mainPanel = new JPanel();
             mainPanel.setLayout(new GridLayout(0, 2));
-            mainPanel.add(panel1); // panel1 contains image
+            mainPanel.add(panel1, BorderLayout.CENTER); // panel1 contains image
             mainPanel.add(panel2); // panel2 contains set of multiple panels with different layouts and contains multiple components
 
             add(mainPanel);
@@ -104,5 +106,11 @@ import javax.swing.Box;
 
         public char[] getPassword(){
             return passwordField.getPassword();
+        }
+
+        public ImageIcon loadAndResizeIcon(String path, int width, int height){
+            ImageIcon icon = new ImageIcon(getClass().getResource(path));
+            Image scaled = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            return new ImageIcon(scaled);
         }
     }
