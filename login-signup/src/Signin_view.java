@@ -6,7 +6,10 @@
     import javax.swing.JPanel;
     import javax.swing.JPasswordField;
     import javax.swing.JTextField;
-    import javax.swing.JLabel;
+
+import model.DesignsAndFormat;
+
+import javax.swing.JLabel;
 
     import java.awt.BorderLayout;
     import java.awt.Color;
@@ -16,8 +19,7 @@
     import java.awt.Image;
 
     public class Signin_view extends JFrame {
-        final private Font mainFont = new Font("Sansserif", Font.BOLD, 18);
-        final private Font titleFont = mainFont.deriveFont(42f);
+        DesignsAndFormat designsAndFormat = new DesignsAndFormat();
 
         private JTextField usernameField;
         private JPasswordField passwordField;
@@ -37,10 +39,10 @@
 
             //signin components
             JLabel formTitle = new JLabel("Signin");
-            formTitle.setFont(titleFont);
+            formTitle.setFont(designsAndFormat.mainFont().deriveFont(42f));
             formTitle.setPreferredSize(new Dimension(0, 150));
-            formTitle.setHorizontalAlignment(formTitle.CENTER);
-    
+            formTitle.setHorizontalAlignment(formTitle.LEFT);
+            
             JLabel lbUsername = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/userIcon.png")));
             usernameField = new JTextField();
             usernameField.setMaximumSize(new Dimension(300, 40));
