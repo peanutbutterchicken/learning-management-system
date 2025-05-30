@@ -15,8 +15,10 @@
     import java.awt.Dimension;
     import java.awt.GridLayout;
     import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-    public class Signin_view extends JFrame {
+    public class Signin_view extends JFrame implements ActionListener {
         DesignsAndFormat designsAndFormat = new DesignsAndFormat();
 
         private JTextField usernameField;
@@ -64,6 +66,7 @@
             horizontalContainer2.add(passwordField);
 
             JButton btnSignin = new JButton("Signin");
+            btnSignin.addActionListener(this); // test button
 
             JPanel verticalContainer = new JPanel();
             verticalContainer.setLayout(new BoxLayout(verticalContainer, BoxLayout.Y_AXIS));
@@ -105,5 +108,9 @@
             ImageIcon icon = new ImageIcon(getClass().getResource(path));
             Image scaled = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
             return new ImageIcon(scaled);
+        }
+
+        public void actionPerformed(ActionEvent e){ // test button
+            System.out.println("button clicked");
         }
     }

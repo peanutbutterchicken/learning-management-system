@@ -26,6 +26,6 @@ public class App {
         }
     }
     while(action != 1 || action != 2);
-
+    sc.close();
     }
 }
