@@ -1,4 +1,4 @@
-package view;
+
 
 import model.LoadAndResizeImage;
 import model.DesignsAndFormat;
