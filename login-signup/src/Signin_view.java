@@ -1,4 +1,5 @@
     import model.DesignsAndFormat;
+    import model.LoadAndResizeImage;
     
     import javax.swing.BorderFactory;
     import javax.swing.BoxLayout;
@@ -15,11 +16,12 @@
     import java.awt.Dimension;
     import java.awt.GridLayout;
     import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+    import java.awt.event.ActionEvent;
+    import java.awt.event.ActionListener;
 
-    public class Signin_view extends JFrame implements ActionListener {
+    public class Signin_view extends JFrame{
         DesignsAndFormat designsAndFormat = new DesignsAndFormat();
+        LoadAndResizeImage loadAndResizeImage = new LoadAndResizeImage();
 
         private JTextField usernameField;
         private JPasswordField passwordField;
@@ -31,7 +33,7 @@ import java.awt.event.ActionListener;
         private void initComponents(){
 
             //image container
-            ImageIcon signinImageIcon = loadAndResizeIcon("/resources/images/signin-image.png", 256, 256);
+            ImageIcon signinImageIcon = loadAndResizeImage.loadAndResize("/resources/images/signin-image.png", 256, 256);
             JLabel signinImage = new JLabel(signinImageIcon);
 
             JPanel panel1 = new JPanel(new BorderLayout());    
@@ -69,7 +71,6 @@ import java.awt.event.ActionListener;
 
 
             JButton btnSignin = new JButton("Signin");
-            btnSignin.addActionListener(this); // test button
 
             JPanel horizontalContainer3 = new JPanel();
             horizontalContainer3.add(btnSignin);
@@ -83,6 +84,26 @@ import java.awt.event.ActionListener;
             JLabel lbCreateAccountLink = new JLabel("Sign up");
             lbCreateAccountLink.setFont(designsAndFormat.mainFont().deriveFont(12f));
             lbCreateAccountLink.setForeground(Color.BLACK);
+            lbCreateAccountLink.addMouseListener(new java.awt.event.MouseAdapter(){
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt){
+                    Signup_view signup_view = new Signup_view();
+                    signup_view.setVisible(true);
+                    Signin_view.this.dispose();
+                }
+
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent evt){
+                    lbCreateAccountLink.setForeground(Color.BLUE);
+                }
+
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent evt){
+                    lbCreateAccountLink.setForeground(Color.BLACK);
+                }
+
+            });
+
 
             JPanel horizontalContainer4 = new JPanel();
             horizontalContainer4.setLayout(new BoxLayout(horizontalContainer4, BoxLayout.X_AXIS));
@@ -127,13 +148,4 @@ import java.awt.event.ActionListener;
             return passwordField.getPassword();
         }
 
-        public ImageIcon loadAndResizeIcon(String path, int width, int height){
-            ImageIcon icon = new ImageIcon(getClass().getResource(path));
-            Image scaled = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
-            return new ImageIcon(scaled);
-        }
-
-        public void actionPerformed(ActionEvent e){ // test button
-            System.out.println("button clicked");
-        }
     }
