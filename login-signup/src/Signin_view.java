@@ -84,8 +84,8 @@
             JLabel lbCreateAccountLink = new JLabel("Sign up");
             lbCreateAccountLink.setFont(designsAndFormat.mainFont().deriveFont(12f));
             lbCreateAccountLink.setForeground(Color.BLACK);
-            lbCreateAccountLink.addMouseListener(new MouseAdapter(){
-
+            lbCreateAccountLink.addMouseListener(new MouseAdapter(){ // anonymous inner class, more efficient for methods that only performed by one component. In place of creating a class.
+ 
                 @Override
                 public void mouseClicked(MouseEvent evt){
                     Signup_view signup_view = new Signup_view();

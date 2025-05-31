@@ -7,6 +7,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -90,8 +93,45 @@ public class Signup_view extends JFrame{
             horizontalPanel4.add(jtxtUserEmail);
             horizontalPanel4.setAlignmentX(JPanel.CENTER_ALIGNMENT);
 
-            JButton btnSignup = new JButton("SignUp");// Test button
-            btnSignup.setAlignmentX(JPanel.CENTER_ALIGNMENT);
+
+            JButton btnSignup = new JButton("SignUp");
+
+            JPanel horizontalPanel5 = new JPanel();
+            horizontalPanel5.setMaximumSize(new Dimension(200, 40));
+            horizontalPanel5.setBackground(designsAndFormat.mainBackgroundColor());
+            horizontalPanel5.add(btnSignup);
+
+
+            JLabel lbAlreadyHaveAnAccount = new JLabel("Already have an account? ");
+            JLabel lbAlreadyHaveAnAccountLink = new JLabel("SignIn");
+
+            lbAlreadyHaveAnAccountLink.addMouseListener(new MouseAdapter() {
+                @Override
+
+                public void mouseClicked(MouseEvent evt){
+                    Signin_view signin_view = new Signin_view();
+                    signin_view.setVisible(true);
+                    Signup_view.this.dispose();
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent evt){
+                    lbAlreadyHaveAnAccountLink.setForeground(Color.BLUE);
+                }
+
+                @Override
+                public void mouseExited(MouseEvent evt){
+                    lbAlreadyHaveAnAccountLink.setForeground(Color.BLACK);
+                }
+            });
+
+            JPanel horizontalPanel6 = new JPanel();
+            horizontalPanel6.setLayout(new BoxLayout(horizontalPanel6, BoxLayout.X_AXIS));
+            horizontalPanel6.setMaximumSize(new Dimension(200, 40));
+            horizontalPanel6.setBackground(designsAndFormat.mainBackgroundColor());
+            horizontalPanel6.add(lbAlreadyHaveAnAccount);
+            horizontalPanel6.add(lbAlreadyHaveAnAccountLink);
+
 
             JPanel verticalPanel = new JPanel();
             verticalPanel.setLayout(new BoxLayout(verticalPanel, BoxLayout.Y_AXIS));
@@ -100,7 +140,8 @@ public class Signup_view extends JFrame{
             verticalPanel.add(horizontalPanel2);
             verticalPanel.add(horizontalPanel3);
             verticalPanel.add(horizontalPanel4);
-            verticalPanel.add(btnSignup);
+            verticalPanel.add(horizontalPanel5);
+            verticalPanel.add(horizontalPanel6);
 
             JPanel panel1 = new JPanel();
             panel1.setLayout(new BorderLayout());
