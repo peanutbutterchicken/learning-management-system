@@ -9,13 +9,12 @@
     import javax.swing.JPanel;
     import javax.swing.JPasswordField;
     import javax.swing.JTextField;
-
+    import javax.swing.SwingConstants;
     import javax.swing.JLabel;
     import java.awt.BorderLayout;
     import java.awt.Color;
     import java.awt.Dimension;
     import java.awt.GridLayout;
-    import java.awt.Image;
     import java.awt.event.MouseAdapter;
     import java.awt.event.MouseEvent;
 
@@ -43,7 +42,7 @@
             JLabel formTitle = new JLabel("Signin");
             formTitle.setFont(designsAndFormat.mainFont().deriveFont(42f));
             formTitle.setPreferredSize(new Dimension(0, 150));
-            formTitle.setHorizontalAlignment(formTitle.CENTER);
+            formTitle.setHorizontalAlignment(SwingConstants.CENTER);
             
 
             JLabel lbUsername = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/userIcon.png")));
