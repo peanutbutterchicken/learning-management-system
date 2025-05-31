@@ -16,8 +16,8 @@
     import java.awt.Dimension;
     import java.awt.GridLayout;
     import java.awt.Image;
-    import java.awt.event.ActionEvent;
-    import java.awt.event.ActionListener;
+    import java.awt.event.MouseAdapter;
+    import java.awt.event.MouseEvent;
 
     public class Signin_view extends JFrame{
         DesignsAndFormat designsAndFormat = new DesignsAndFormat();
@@ -84,21 +84,22 @@
             JLabel lbCreateAccountLink = new JLabel("Sign up");
             lbCreateAccountLink.setFont(designsAndFormat.mainFont().deriveFont(12f));
             lbCreateAccountLink.setForeground(Color.BLACK);
-            lbCreateAccountLink.addMouseListener(new java.awt.event.MouseAdapter(){
+            lbCreateAccountLink.addMouseListener(new MouseAdapter(){
+
                 @Override
-                public void mouseClicked(java.awt.event.MouseEvent evt){
+                public void mouseClicked(MouseEvent evt){
                     Signup_view signup_view = new Signup_view();
                     signup_view.setVisible(true);
                     Signin_view.this.dispose();
                 }
 
                 @Override
-                public void mouseEntered(java.awt.event.MouseEvent evt){
+                public void mouseEntered(MouseEvent evt){
                     lbCreateAccountLink.setForeground(Color.BLUE);
                 }
 
                 @Override
-                public void mouseExited(java.awt.event.MouseEvent evt){
+                public void mouseExited(MouseEvent evt){
                     lbCreateAccountLink.setForeground(Color.BLACK);
                 }
 
