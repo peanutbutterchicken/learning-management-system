@@ -41,38 +41,61 @@ import java.awt.event.ActionListener;
             JLabel formTitle = new JLabel("Signin");
             formTitle.setFont(designsAndFormat.mainFont().deriveFont(42f));
             formTitle.setPreferredSize(new Dimension(0, 150));
-            formTitle.setHorizontalAlignment(formTitle.LEFT);
+            formTitle.setHorizontalAlignment(formTitle.CENTER);
             
+
             JLabel lbUsername = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/userIcon.png")));
             usernameField = new JTextField();
-            usernameField.setMaximumSize(new Dimension(300, 40));
+            usernameField.setMaximumSize(new Dimension(200, 40));
             usernameField.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY));
             usernameField.setOpaque(false); 
-
-            JLabel lbPassword = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/pwIcon.png")));
-            passwordField = new JPasswordField();
-            passwordField.setMaximumSize(new Dimension(300, 40));
-            passwordField.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY)); // bottom line only
-            passwordField.setOpaque(false); 
-
+         
             JPanel horizontalContainer1 = new JPanel();
             horizontalContainer1.setLayout(new BoxLayout(horizontalContainer1, BoxLayout.X_AXIS));
             horizontalContainer1.add(lbUsername);
             horizontalContainer1.add(usernameField);
+
+
+            JLabel lbPassword = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/pwIcon.png")));
+            passwordField = new JPasswordField();
+            passwordField.setMaximumSize(new Dimension(200, 40));
+            passwordField.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY)); // bottom line only
+            passwordField.setOpaque(false); 
 
             JPanel horizontalContainer2 = new JPanel();
             horizontalContainer2.setLayout(new BoxLayout(horizontalContainer2, BoxLayout.X_AXIS));
             horizontalContainer2.add(lbPassword);
             horizontalContainer2.add(passwordField);
 
+
             JButton btnSignin = new JButton("Signin");
             btnSignin.addActionListener(this); // test button
+
+            JPanel horizontalContainer3 = new JPanel();
+            horizontalContainer3.add(btnSignin);
+            horizontalContainer3.setMaximumSize(new Dimension(200, 40));
+
+
+            JLabel lbCreateAccount = new JLabel("Don't have an account? ");
+            lbCreateAccount.setFont(designsAndFormat.mainFont().deriveFont(12f));
+            lbCreateAccount.setForeground(Color.GRAY);
+
+            JLabel lbCreateAccountLink = new JLabel("Sign up");
+            lbCreateAccountLink.setFont(designsAndFormat.mainFont().deriveFont(12f));
+            lbCreateAccountLink.setForeground(Color.BLACK);
+
+            JPanel horizontalContainer4 = new JPanel();
+            horizontalContainer4.setLayout(new BoxLayout(horizontalContainer4, BoxLayout.X_AXIS));
+            horizontalContainer4.setMaximumSize(new Dimension(200, 40));
+            horizontalContainer4.add(lbCreateAccount);
+            horizontalContainer4.add(lbCreateAccountLink);
 
             JPanel verticalContainer = new JPanel();
             verticalContainer.setLayout(new BoxLayout(verticalContainer, BoxLayout.Y_AXIS));
             verticalContainer.add(horizontalContainer1);
             verticalContainer.add(horizontalContainer2);
-            verticalContainer.add(btnSignin);
+            verticalContainer.add(horizontalContainer3);
+            verticalContainer.add(horizontalContainer4);
 
             //signin components container
             JPanel panel2 = new JPanel();
