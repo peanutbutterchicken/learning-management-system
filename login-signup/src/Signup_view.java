@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -33,8 +34,10 @@ public class Signup_view extends JFrame{
 
             JLabel lbTitle = new JLabel("SignUp");
             lbTitle.setFont(designsAndFormat.mainFont().deriveFont(42f));
-            lbTitle.setPreferredSize(new Dimension(0, 150));
-            lbTitle.setHorizontalAlignment(JLabel.CENTER);
+            lbTitle.setPreferredSize(new Dimension(0, 120));
+            lbTitle.setHorizontalAlignment(JLabel.LEFT);
+            lbTitle.setVerticalAlignment(JLabel.BOTTOM);
+            lbTitle.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
 
             JLabel lbPrefUsername = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/userIcon.png")));
             jtxtPrefUsername = new JTextField();
@@ -76,12 +79,12 @@ public class Signup_view extends JFrame{
             horizontalPanel3.add(jtxtConfirmUserPassword);
             horizontalPanel3.setAlignmentX(JPanel.CENTER_ALIGNMENT);
 
+
             JLabel lbUserEmail = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/email.png")));
             jtxtUserEmail = new JTextField();
             jtxtUserEmail.setMaximumSize(new Dimension(200, 40));
             jtxtUserEmail.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY));
             jtxtUserEmail.setOpaque(false);
-
 
             JPanel horizontalPanel4 = new JPanel();
             horizontalPanel4.setLayout(new BoxLayout(horizontalPanel4, BoxLayout.X_AXIS));
@@ -99,8 +102,45 @@ public class Signup_view extends JFrame{
             horizontalPanel5.add(btnSignup);
 
 
+            JPanel verticalPanel = new JPanel();
+            verticalPanel.setLayout(new BoxLayout(verticalPanel, BoxLayout.Y_AXIS));
+            verticalPanel.setBackground(designsAndFormat.mainBackgroundColor());
+            verticalPanel.add(horizontalPanel1);
+            verticalPanel.add(horizontalPanel2);
+            verticalPanel.add(horizontalPanel3);
+            verticalPanel.add(horizontalPanel4);
+            verticalPanel.add(horizontalPanel5);
+
+            JPanel panel1 = new JPanel();
+            panel1.setLayout(new BorderLayout());
+            panel1.setBackground(designsAndFormat.mainBackgroundColor());
+            panel1.add(lbTitle, BorderLayout.NORTH);
+            panel1.add(verticalPanel, BorderLayout.CENTER);
+
+
+            // image container
+            ImageIcon signupImage = loadAndResizeImage.loadAndResize("/resources/images/signup-image.png", 256, 256);
+            JLabel signUpImageContainer = new JLabel(signupImage);
+            signUpImageContainer.setAlignmentX(signUpImageContainer.CENTER_ALIGNMENT);
+            signUpImageContainer.setBorder(BorderFactory.createEmptyBorder(40, 0, 0, 0));
+
             JLabel lbAlreadyHaveAnAccount = new JLabel("Already have an account? ");
             JLabel lbAlreadyHaveAnAccountLink = new JLabel("SignIn");
+
+
+            JPanel linkContainer = new JPanel();
+            linkContainer.setLayout(new BoxLayout(linkContainer, BoxLayout.X_AXIS));
+            linkContainer.setAlignmentX(linkContainer.CENTER_ALIGNMENT);
+            linkContainer.setBackground(designsAndFormat.mainBackgroundColor());
+            linkContainer.add(lbAlreadyHaveAnAccount);
+            linkContainer.add(lbAlreadyHaveAnAccountLink);
+
+
+            JPanel verticalContainer = new JPanel();
+            verticalContainer.setLayout(new BoxLayout(verticalContainer, BoxLayout.Y_AXIS));
+            verticalContainer.setBackground(designsAndFormat.mainBackgroundColor());
+            verticalContainer.add(signUpImageContainer);
+            verticalContainer.add(linkContainer);
 
             lbAlreadyHaveAnAccountLink.addMouseListener(new MouseAdapter() {
                 @Override
@@ -122,37 +162,10 @@ public class Signup_view extends JFrame{
                 }
             });
 
-            JPanel horizontalPanel6 = new JPanel();
-            horizontalPanel6.setLayout(new BoxLayout(horizontalPanel6, BoxLayout.X_AXIS));
-            horizontalPanel6.setMaximumSize(new Dimension(200, 40));
-            horizontalPanel6.setBackground(designsAndFormat.mainBackgroundColor());
-            horizontalPanel6.add(lbAlreadyHaveAnAccount);
-            horizontalPanel6.add(lbAlreadyHaveAnAccountLink);
-
-
-            JPanel verticalPanel = new JPanel();
-            verticalPanel.setLayout(new BoxLayout(verticalPanel, BoxLayout.Y_AXIS));
-            verticalPanel.setBackground(designsAndFormat.mainBackgroundColor());
-            verticalPanel.add(horizontalPanel1);
-            verticalPanel.add(horizontalPanel2);
-            verticalPanel.add(horizontalPanel3);
-            verticalPanel.add(horizontalPanel4);
-            verticalPanel.add(horizontalPanel5);
-            verticalPanel.add(horizontalPanel6);
-
-            JPanel panel1 = new JPanel();
-            panel1.setLayout(new BorderLayout());
-            panel1.setBackground(designsAndFormat.mainBackgroundColor());
-            panel1.add(lbTitle, BorderLayout.NORTH);
-            panel1.add(verticalPanel, BorderLayout.CENTER);
-
-            // image container
-            ImageIcon signupImage = loadAndResizeImage.loadAndResize("/resources/images/signup-image.png", 256, 256);
-            JLabel signUpImageContainer = new JLabel(signupImage);
-
             JPanel panel2 = new JPanel(new BorderLayout());
             panel2.setBackground(designsAndFormat.mainBackgroundColor());
-            panel2.add(signUpImageContainer);
+            panel2.add(verticalContainer, BorderLayout.CENTER);
+
 
             JPanel mainPanel = new JPanel(new GridLayout(0,2));
             mainPanel.add(panel1);
@@ -160,7 +173,7 @@ public class Signup_view extends JFrame{
 
             add(mainPanel);
             setTitle("SignUp");
-            setSize(800, 500);
+            setSize(650, 450);
             setMinimumSize(new Dimension(300, 300));
             setDefaultCloseOperation(Signup_view.EXIT_ON_CLOSE);
             setVisible(true);
