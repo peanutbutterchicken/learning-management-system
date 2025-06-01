@@ -9,10 +9,10 @@
     import javax.swing.JPanel;
     import javax.swing.JPasswordField;
     import javax.swing.JTextField;
-    import javax.swing.SwingConstants;
     import javax.swing.JLabel;
     import java.awt.BorderLayout;
     import java.awt.Color;
+    import java.awt.Component;
     import java.awt.Dimension;
     import java.awt.GridLayout;
     import java.awt.event.MouseAdapter;
@@ -34,7 +34,7 @@
             //image container
             ImageIcon signinImageIcon = loadAndResizeImage.loadAndResize("/resources/images/signin-image.png", 256, 256);
             JLabel signinImageContainer = new JLabel(signinImageIcon);
-            signinImageContainer.setAlignmentX(signinImageContainer.CENTER_ALIGNMENT);
+            signinImageContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
             signinImageContainer.setBorder(BorderFactory.createEmptyBorder(40, 0, 0, 0));  
 
             JLabel lbCreateAccount = new JLabel("Don't have an account? ");
@@ -67,7 +67,7 @@
 
             JPanel linkContainer = new JPanel();
             linkContainer.setLayout(new BoxLayout(linkContainer, BoxLayout.X_AXIS));
-            linkContainer.setAlignmentX(linkContainer.CENTER_ALIGNMENT);
+            linkContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
             linkContainer.add(lbCreateAccount);
             linkContainer.add(lbCreateAccountLink);
 

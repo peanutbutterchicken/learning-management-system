@@ -3,13 +3,13 @@ import model.DesignsAndFormat;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -121,7 +121,7 @@ public class Signup_view extends JFrame{
             // image container
             ImageIcon signupImage = loadAndResizeImage.loadAndResize("/resources/images/signup-image.png", 256, 256);
             JLabel signUpImageContainer = new JLabel(signupImage);
-            signUpImageContainer.setAlignmentX(signUpImageContainer.CENTER_ALIGNMENT);
+            signUpImageContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
             signUpImageContainer.setBorder(BorderFactory.createEmptyBorder(40, 0, 0, 0));
 
             JLabel lbAlreadyHaveAnAccount = new JLabel("Already have an account? ");
@@ -130,7 +130,7 @@ public class Signup_view extends JFrame{
 
             JPanel linkContainer = new JPanel();
             linkContainer.setLayout(new BoxLayout(linkContainer, BoxLayout.X_AXIS));
-            linkContainer.setAlignmentX(linkContainer.CENTER_ALIGNMENT);
+            linkContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
             linkContainer.setBackground(designsAndFormat.mainBackgroundColor());
             linkContainer.add(lbAlreadyHaveAnAccount);
             linkContainer.add(lbAlreadyHaveAnAccountLink);
