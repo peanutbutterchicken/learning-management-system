@@ -1,5 +1,3 @@
-
-
 import model.LoadAndResizeImage;
 import model.DesignsAndFormat;
 
