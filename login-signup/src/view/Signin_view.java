@@ -114,6 +114,10 @@ package view;
 
 
             JButton btnSignin = new JButton("Signin");
+            btnSignin.setBackground(DesignsAndFormat.blueBackgroundColor());
+            btnSignin.setForeground(Color.WHITE);
+            btnSignin.setBorderPainted(false);
+            btnSignin.setFocusable(false);
 
             JPanel horizontalContainer3 = new JPanel();
             horizontalContainer3.add(btnSignin);

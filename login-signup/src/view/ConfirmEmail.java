@@ -27,7 +27,7 @@ public class ConfirmEmail extends JFrame {
 
         JPanel horizontalPanel1 = new JPanel();
         horizontalPanel1.setLayout(new BoxLayout(horizontalPanel1, BoxLayout.X_AXIS));
-        horizontalPanel1.setBackground(designsAndFormat.mainBackgroundColor());
+        horizontalPanel1.setBackground(DesignsAndFormat.whiteBackgroundColor());
         horizontalPanel1.setBorder(BorderFactory.createEmptyBorder(30, 0, 0, 0));
         horizontalPanel1.setAlignmentX(CENTER_ALIGNMENT);
         horizontalPanel1.add(lbConfirmEmailImageContainer);
@@ -39,7 +39,7 @@ public class ConfirmEmail extends JFrame {
 
         JPanel horizontalPanel2 = new JPanel();
         horizontalPanel2.setLayout(new BoxLayout(horizontalPanel2, BoxLayout.X_AXIS));
-        horizontalPanel2.setBackground(designsAndFormat.mainBackgroundColor());
+        horizontalPanel2.setBackground(DesignsAndFormat.whiteBackgroundColor());
         horizontalPanel2.setAlignmentX(CENTER_ALIGNMENT);
         horizontalPanel2.add(lbConfirmationEmailTextHeader);
 
@@ -62,7 +62,7 @@ public class ConfirmEmail extends JFrame {
         JPanel horizontalPanel3 = new JPanel();
         horizontalPanel3.setLayout(new BoxLayout(horizontalPanel3, BoxLayout.Y_AXIS));
         horizontalPanel3.setAlignmentX(CENTER_ALIGNMENT);
-        horizontalPanel3.setBackground(designsAndFormat.mainBackgroundColor());
+        horizontalPanel3.setBackground(DesignsAndFormat.whiteBackgroundColor());
         horizontalPanel3.add(lbConfirmationEmailText1);
         horizontalPanel3.add(lbConfirmationEmailText2);
         horizontalPanel3.add(lbConfirmationEmailText3);
@@ -70,7 +70,7 @@ public class ConfirmEmail extends JFrame {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.setBackground(designsAndFormat.mainBackgroundColor());
+        mainPanel.setBackground(DesignsAndFormat.whiteBackgroundColor());
         mainPanel.add(horizontalPanel1);
         mainPanel.add(horizontalPanel2);
         mainPanel.add(horizontalPanel3);

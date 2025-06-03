@@ -12,11 +12,17 @@ public class App {
                 ConfirmEmail confirmEmail = new ConfirmEmail();
                 confirmEmail.setVisible(true);
                 break;
+
+                case 2:
+                Signin_view signin_view = new Signin_view();
+                signin_view.setVisible(true);
+                break;
+                
                 default:
                 break;
             }
         }
-        while(action!=1);
+        while(action<=0);
         
         sc.close();
     }

@@ -48,7 +48,7 @@ public class Signup_view extends JFrame{
 
             JPanel horizontalPanel1 = new JPanel();
             horizontalPanel1.setLayout(new BoxLayout(horizontalPanel1, BoxLayout.X_AXIS));
-            horizontalPanel1.setBackground(designsAndFormat.mainBackgroundColor());
+            horizontalPanel1.setBackground(DesignsAndFormat.whiteBackgroundColor());
             horizontalPanel1.add(lbPrefUsername);
             horizontalPanel1.add(jtxtPrefUsername);
             horizontalPanel1.setAlignmentX(JPanel.CENTER_ALIGNMENT);
@@ -61,7 +61,7 @@ public class Signup_view extends JFrame{
             
             JPanel horizontalPanel2 = new JPanel();
             horizontalPanel2.setLayout(new BoxLayout(horizontalPanel2, BoxLayout.X_AXIS));
-            horizontalPanel2.setBackground(designsAndFormat.mainBackgroundColor());
+            horizontalPanel2.setBackground(DesignsAndFormat.whiteBackgroundColor());
             horizontalPanel2.add(lbPrefPassword);
             horizontalPanel2.add(jtxtPrefPassword);
             horizontalPanel2.setAlignmentX(JPanel.CENTER_ALIGNMENT);
@@ -75,7 +75,7 @@ public class Signup_view extends JFrame{
 
             JPanel horizontalPanel3 = new JPanel();
             horizontalPanel3.setLayout(new BoxLayout(horizontalPanel3, BoxLayout.X_AXIS));
-            horizontalPanel3.setBackground(designsAndFormat.mainBackgroundColor());
+            horizontalPanel3.setBackground(DesignsAndFormat.whiteBackgroundColor());
             horizontalPanel3.add(lbConfirmEmail);
             horizontalPanel3.add(jtxtConfirmUserPassword);
             horizontalPanel3.setAlignmentX(JPanel.CENTER_ALIGNMENT);
@@ -89,7 +89,7 @@ public class Signup_view extends JFrame{
 
             JPanel horizontalPanel4 = new JPanel();
             horizontalPanel4.setLayout(new BoxLayout(horizontalPanel4, BoxLayout.X_AXIS));
-            horizontalPanel4.setBackground(designsAndFormat.mainBackgroundColor());
+            horizontalPanel4.setBackground(DesignsAndFormat.whiteBackgroundColor());
             horizontalPanel4.add(lbUserEmail);
             horizontalPanel4.add(jtxtUserEmail);
             horizontalPanel4.setAlignmentX(JPanel.CENTER_ALIGNMENT);
@@ -99,13 +99,13 @@ public class Signup_view extends JFrame{
 
             JPanel horizontalPanel5 = new JPanel();
             horizontalPanel5.setMaximumSize(new Dimension(200, 40));
-            horizontalPanel5.setBackground(designsAndFormat.mainBackgroundColor());
+            horizontalPanel5.setBackground(DesignsAndFormat.whiteBackgroundColor());
             horizontalPanel5.add(btnSignup);
 
 
             JPanel verticalPanel = new JPanel();
             verticalPanel.setLayout(new BoxLayout(verticalPanel, BoxLayout.Y_AXIS));
-            verticalPanel.setBackground(designsAndFormat.mainBackgroundColor());
+            verticalPanel.setBackground(DesignsAndFormat.whiteBackgroundColor());
             verticalPanel.add(horizontalPanel1);
             verticalPanel.add(horizontalPanel2);
             verticalPanel.add(horizontalPanel3);
@@ -114,7 +114,7 @@ public class Signup_view extends JFrame{
 
             JPanel panel1 = new JPanel();
             panel1.setLayout(new BorderLayout());
-            panel1.setBackground(designsAndFormat.mainBackgroundColor());
+            panel1.setBackground(DesignsAndFormat.whiteBackgroundColor());
             panel1.add(lbTitle, BorderLayout.NORTH);
             panel1.add(verticalPanel, BorderLayout.CENTER);
 
@@ -132,14 +132,14 @@ public class Signup_view extends JFrame{
             JPanel linkContainer = new JPanel();
             linkContainer.setLayout(new BoxLayout(linkContainer, BoxLayout.X_AXIS));
             linkContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
-            linkContainer.setBackground(designsAndFormat.mainBackgroundColor());
+            linkContainer.setBackground(DesignsAndFormat.whiteBackgroundColor());
             linkContainer.add(lbAlreadyHaveAnAccount);
             linkContainer.add(lbAlreadyHaveAnAccountLink);
 
 
             JPanel verticalContainer = new JPanel();
             verticalContainer.setLayout(new BoxLayout(verticalContainer, BoxLayout.Y_AXIS));
-            verticalContainer.setBackground(designsAndFormat.mainBackgroundColor());
+            verticalContainer.setBackground(DesignsAndFormat.whiteBackgroundColor());
             verticalContainer.add(signUpImageContainer);
             verticalContainer.add(linkContainer);
 
@@ -164,7 +164,7 @@ public class Signup_view extends JFrame{
             });
 
             JPanel panel2 = new JPanel(new BorderLayout());
-            panel2.setBackground(designsAndFormat.mainBackgroundColor());
+            panel2.setBackground(DesignsAndFormat.whiteBackgroundColor());
             panel2.add(verticalContainer, BorderLayout.CENTER);
 
 
