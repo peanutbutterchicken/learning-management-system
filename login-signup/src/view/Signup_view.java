@@ -113,9 +113,11 @@ public class Signup_view extends JFrame{
                     }
                     if(!Arrays.equals(getPassword(), getConfirmUserPassword())){
                         JOptionPane.showMessageDialog(null, "Password mismatch", "Dialog Box", JOptionPane.ERROR_MESSAGE);
+                        return;
                     }
                     if(getPassword().length < 8){
                         JOptionPane.showMessageDialog(null, "Password length must be greater than 8 characters", "Dialog Box", JOptionPane.ERROR_MESSAGE);
+                        return;
                     }
 
                     // todo
