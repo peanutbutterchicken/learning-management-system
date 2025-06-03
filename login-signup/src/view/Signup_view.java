@@ -8,8 +8,12 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -17,6 +21,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -97,6 +102,13 @@ public class Signup_view extends JFrame{
 
 
             JButton btnSignup = Buttons.standardBlueButton("SignUp");
+
+            btnSignup.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent evt){
+                    //asdada
+                }
+            });
 
             JPanel horizontalPanel5 = new JPanel();
             horizontalPanel5.setMaximumSize(new Dimension(200, 40));
@@ -180,5 +192,29 @@ public class Signup_view extends JFrame{
             setDefaultCloseOperation(Signup_view.EXIT_ON_CLOSE);
             setVisible(true);
             setLocationRelativeTo(null);
+        }
+
+        public String getUsername(){
+            return jtxtPrefUsername.getText();
+        }
+
+        public String getEmail(){
+            return jtxtUserEmail.getText();
+        }
+
+        public char[] getPassword(){
+            return jtxtPrefPassword.getPassword();
+        }
+
+        public boolean isUsernameEmpty(){
+        return getUsername().isEmpty();
+        }
+
+        public boolean isEmailEmpty(){
+        return getEmail().isEmpty();
+        }
+
+        public boolean isPasswordEmpty(){
+        return getPassword().length == 0;
         }
 }
