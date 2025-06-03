@@ -57,7 +57,7 @@ package view;
 
                 @Override
                 public void mouseEntered(MouseEvent evt){
-                    lbCreateAccountLink.setForeground(Color.BLUE);
+                    lbCreateAccountLink.setForeground(DesignsAndFormat.BLUE_BG);
                 }
 
                 @Override

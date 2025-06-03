@@ -155,7 +155,7 @@ public class Signup_view extends JFrame{
 
                 @Override
                 public void mouseEntered(MouseEvent evt){
-                    lbAlreadyHaveAnAccountLink.setForeground(Color.BLUE);
+                    lbAlreadyHaveAnAccountLink.setForeground(DesignsAndFormat.BLUE_BG);
                 }
 
                 @Override
