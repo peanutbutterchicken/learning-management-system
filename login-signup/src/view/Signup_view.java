@@ -31,7 +31,7 @@ public class Signup_view extends JFrame{
         LoadAndResizeImage loadAndResizeImage = new LoadAndResizeImage();
 
         private JTextField jtxtPrefUsername, jtxtUserEmail;
-        private JPasswordField jtxtPrefPassword;
+        private JPasswordField jtxtPrefPassword, jtxtConfirmUserPassword;
 
         public Signup_view(){
             initComponents();
@@ -74,7 +74,7 @@ public class Signup_view extends JFrame{
 
 
             JLabel lbConfirmEmail = new JLabel(new ImageIcon(getClass().getResource("/resources/icons/checkCircle.png")));
-            JPasswordField jtxtConfirmUserPassword = new JPasswordField();
+            jtxtConfirmUserPassword = new JPasswordField();
             jtxtConfirmUserPassword.setMaximumSize(new Dimension(200, 40));
             jtxtConfirmUserPassword.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.GRAY));
             jtxtConfirmUserPassword.setOpaque(false);
@@ -104,9 +104,21 @@ public class Signup_view extends JFrame{
             JButton btnSignup = Buttons.standardBlueButton("SignUp");
 
             btnSignup.addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent evt){
-                    //asdada
+                    if(isUsernameEmpty() || isPasswordEmpty() || isEmailEmpty()){
+                        JOptionPane.showMessageDialog(null, "Empty fields", "Dialog Box", JOptionPane.INFORMATION_MESSAGE);
+                        return;
+                    }
+                    if(!Arrays.equals(getPassword(), getConfirmUserPassword())){
+                        JOptionPane.showMessageDialog(null, "Password mismatch", "Dialog Box", JOptionPane.ERROR_MESSAGE);
+                    }
+                    if(getPassword().length < 8){
+                        JOptionPane.showMessageDialog(null, "Password length must be greater than 8 characters", "Dialog Box", JOptionPane.ERROR_MESSAGE);
+                    }
+
+                    // todo
                 }
             });
 
@@ -205,7 +217,10 @@ public class Signup_view extends JFrame{
         public char[] getPassword(){
             return jtxtPrefPassword.getPassword();
         }
-
+        
+        public char[] getConfirmUserPassword(){
+            return jtxtConfirmUserPassword.getPassword();
+        }
         public boolean isUsernameEmpty(){
         return getUsername().isEmpty();
         }
