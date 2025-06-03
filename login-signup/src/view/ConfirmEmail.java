@@ -1,8 +1,6 @@
 package view;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.util.function.ToDoubleBiFunction;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
