@@ -18,5 +18,6 @@ public class App {
         }
         while(action!=1);
         
+        sc.close();
     }
 }

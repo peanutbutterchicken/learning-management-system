@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
@@ -44,15 +45,18 @@ public class ConfirmEmail extends JFrame {
 
 
         JLabel lbConfirmationEmailText1 = new JLabel("We have sent verification email to placeholder@gmail.com to confirm");
-        lbConfirmationEmailText1.setFont(designsAndFormat.mainFont().deriveFont(12f));
+        lbConfirmationEmailText1.setFont(designsAndFormat.mainFont().deriveFont(14f));
+        lbConfirmationEmailText1.setForeground(Color.GRAY);
         lbConfirmationEmailText1.setAlignmentX(CENTER_ALIGNMENT);
         
         JLabel lbConfirmationEmailText2 = new JLabel("the validity of your email address. After receiving the email");
-        lbConfirmationEmailText2.setFont(designsAndFormat.mainFont().deriveFont(12f));
+        lbConfirmationEmailText2.setFont(designsAndFormat.mainFont().deriveFont(14f));
+        lbConfirmationEmailText2.setForeground(Color.GRAY);
         lbConfirmationEmailText2.setAlignmentX(CENTER_ALIGNMENT);
 
         JLabel lbConfirmationEmailText3 = new JLabel("follow the link provided to complete your registration.");
-        lbConfirmationEmailText3.setFont(designsAndFormat.mainFont().deriveFont(12f));
+        lbConfirmationEmailText3.setFont(designsAndFormat.mainFont().deriveFont(14f));
+        lbConfirmationEmailText3.setForeground(Color.GRAY);
         lbConfirmationEmailText3.setAlignmentX(CENTER_ALIGNMENT);
 
         JPanel horizontalPanel3 = new JPanel();
