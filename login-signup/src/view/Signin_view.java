@@ -1,4 +1,5 @@
 package view;
+    import model.Buttons;
     import model.DesignsAndFormat;
     import model.LoadAndResizeImage;
     
@@ -112,12 +113,7 @@ package view;
             horizontalContainer2.add(lbPassword);
             horizontalContainer2.add(passwordField);
 
-
-            JButton btnSignin = new JButton("Signin");
-            btnSignin.setBackground(DesignsAndFormat.blueBackgroundColor());
-            btnSignin.setForeground(Color.WHITE);
-            btnSignin.setBorderPainted(false);
-            btnSignin.setFocusable(false);
+            JButton btnSignin = Buttons.standardBlueButton("SignIn");
 
             JPanel horizontalContainer3 = new JPanel();
             horizontalContainer3.add(btnSignin);

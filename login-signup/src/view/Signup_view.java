@@ -1,5 +1,6 @@
 package view;
 import model.LoadAndResizeImage;
+import model.Buttons;
 import model.DesignsAndFormat;
 
 import java.awt.BorderLayout;
@@ -95,7 +96,7 @@ public class Signup_view extends JFrame{
             horizontalPanel4.setAlignmentX(JPanel.CENTER_ALIGNMENT);
 
 
-            JButton btnSignup = new JButton("SignUp");
+            JButton btnSignup = Buttons.standardBlueButton("SignUp");
 
             JPanel horizontalPanel5 = new JPanel();
             horizontalPanel5.setMaximumSize(new Dimension(200, 40));
