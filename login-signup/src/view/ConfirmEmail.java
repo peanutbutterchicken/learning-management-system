@@ -6,10 +6,12 @@ import java.awt.Dimension;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.Buttons;
 import model.DesignsAndFormat;
 import model.LoadAndResizeImage;
 
@@ -66,6 +68,14 @@ public class ConfirmEmail extends JFrame {
         horizontalPanel3.add(lbConfirmationEmailText1);
         horizontalPanel3.add(lbConfirmationEmailText2);
         horizontalPanel3.add(lbConfirmationEmailText3);
+        
+        JButton btnNext = Buttons.standardBlueButton("Next >");
+
+        JPanel horizontalPanel4 = new JPanel();
+        horizontalPanel4.setLayout(new BoxLayout(horizontalPanel4, BoxLayout.X_AXIS));
+        horizontalPanel4.setAlignmentX(CENTER_ALIGNMENT);
+        horizontalPanel4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+        horizontalPanel4.add(btnNext);
 
 
         JPanel mainPanel = new JPanel();
@@ -74,6 +84,7 @@ public class ConfirmEmail extends JFrame {
         mainPanel.add(horizontalPanel1);
         mainPanel.add(horizontalPanel2);
         mainPanel.add(horizontalPanel3);
+        mainPanel.add(horizontalPanel4);
 
         add(mainPanel);
         setSize(650, 450);
