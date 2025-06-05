@@ -2,6 +2,8 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -70,6 +72,15 @@ public class ConfirmEmail extends JFrame {
         horizontalPanel3.add(lbConfirmationEmailText3);
         
         JButton btnNext = Buttons.standardBlueButton("Next >");
+        btnNext.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent evt){
+                ConfirmEmailCode confirmEmailCode = new ConfirmEmailCode();
+                confirmEmailCode.setVisible(true);
+                ConfirmEmail.this.dispose();
+            }
+        });
 
         JPanel horizontalPanel4 = new JPanel();
         horizontalPanel4.setLayout(new BoxLayout(horizontalPanel4, BoxLayout.X_AXIS));
