@@ -3,6 +3,8 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -21,16 +23,16 @@ public class ConfirmEmailCode extends JFrame {
     LoadAndResizeImage loadAndResizeImage = new LoadAndResizeImage();
     JTextField userCode;
 
-    ConfirmEmailCode(){
+    public ConfirmEmailCode(){
         initComponents();
     }
 
-    public void initComponents(){
+    private void initComponents(){
         ImageIcon confirmEmailCodeImage = loadAndResizeImage.loadAndResize("/resources/images/email-verification-code-removebg-preview.png", 240, 240);
         JLabel confirmEmailCodeImageContainer = new JLabel(confirmEmailCodeImage);
         confirmEmailCodeImageContainer.setAlignmentX(CENTER_ALIGNMENT);
         confirmEmailCodeImageContainer.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 0));
-        
+
         // image container
         JPanel gridPanel1 = new JPanel();
         gridPanel1.setLayout(new BorderLayout());
@@ -42,7 +44,16 @@ public class ConfirmEmailCode extends JFrame {
         userCode.setBorder(null);
 
         JButton btnSubmitUserCode = Buttons.standardBlueButton("Submit");
-
+        btnSubmitUserCode.addActionListener(new ActionListener() {
+            // supposed to be performed only if the code verification is a success, otherwise it will prompt an error
+            // working for now for testing
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ConfirmEmailSuccess confirmEmailSuccess = new ConfirmEmailSuccess();
+                confirmEmailSuccess.setVisible(true);
+                ConfirmEmailCode.this.dispose();
+            }
+        });
         
         JPanel jtxtCodeVerifyContainer = new JPanel();
         jtxtCodeVerifyContainer.setLayout(new BoxLayout(jtxtCodeVerifyContainer, BoxLayout.X_AXIS));
