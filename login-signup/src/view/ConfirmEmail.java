@@ -48,17 +48,17 @@ public class ConfirmEmail extends JFrame {
         horizontalPanel2.add(lbConfirmationEmailTextHeader);
 
 
-        JLabel lbConfirmationEmailText1 = new JLabel("We have sent verification email to placeholder@gmail.com to confirm");
+        JLabel lbConfirmationEmailText1 = new JLabel("We have sent your verification code to placeholder@gmail.com to confirm");
         lbConfirmationEmailText1.setFont(designsAndFormat.mainFont().deriveFont(14f));
         lbConfirmationEmailText1.setForeground(Color.GRAY);
         lbConfirmationEmailText1.setAlignmentX(CENTER_ALIGNMENT);
         
-        JLabel lbConfirmationEmailText2 = new JLabel("the validity of your email address. After receiving the email");
+        JLabel lbConfirmationEmailText2 = new JLabel("the validity of your email address. After receiving the code");
         lbConfirmationEmailText2.setFont(designsAndFormat.mainFont().deriveFont(14f));
         lbConfirmationEmailText2.setForeground(Color.GRAY);
         lbConfirmationEmailText2.setAlignmentX(CENTER_ALIGNMENT);
 
-        JLabel lbConfirmationEmailText3 = new JLabel("follow the link provided to complete your registration.");
+        JLabel lbConfirmationEmailText3 = new JLabel("verify to complete your registration.");
         lbConfirmationEmailText3.setFont(designsAndFormat.mainFont().deriveFont(14f));
         lbConfirmationEmailText3.setForeground(Color.GRAY);
         lbConfirmationEmailText3.setAlignmentX(CENTER_ALIGNMENT);
