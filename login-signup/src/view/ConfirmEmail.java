@@ -75,6 +75,7 @@ public class ConfirmEmail extends JFrame {
         horizontalPanel4.setLayout(new BoxLayout(horizontalPanel4, BoxLayout.X_AXIS));
         horizontalPanel4.setAlignmentX(CENTER_ALIGNMENT);
         horizontalPanel4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+        horizontalPanel4.setBackground(DesignsAndFormat.whiteBackgroundColor());
         horizontalPanel4.add(btnNext);
 
 
